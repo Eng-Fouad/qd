@@ -1,5 +1,6 @@
 package com.github.nderwin.qd.control;
 
+import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.event.Event;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
@@ -17,6 +18,7 @@ public class ExitAction extends AbstractAction {
     @Inject
     Event<ApplicationExitEvent> exitEvent;
 
+    @PostConstruct
     public void init() {
         putValue(NAME, i18n.getMessage("menuitem.exit"));
         putValue(MNEMONIC_KEY, KeyEvent.getExtendedKeyCodeForChar(i18n.getMessage("menuitem.exit.mnemonic").charAt(0)));

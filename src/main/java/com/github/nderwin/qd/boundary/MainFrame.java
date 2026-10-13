@@ -48,7 +48,6 @@ public class MainFrame extends JFrame {
         file.setMnemonic(i18n.getMessage("menu.file.mnemonic").charAt(0));
         bar.add(file);
 
-        exitAction.init();
         file.add(new JMenuItem(exitAction));
 
         return bar;
