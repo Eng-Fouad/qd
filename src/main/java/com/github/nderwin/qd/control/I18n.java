@@ -1,13 +1,17 @@
 package com.github.nderwin.qd.control;
 
+import io.quarkus.logging.Log;
 import jakarta.enterprise.context.ApplicationScoped;
+import java.awt.event.KeyEvent;
 import java.util.Locale;
+import java.util.MissingResourceException;
 import java.util.ResourceBundle;
+import javax.swing.KeyStroke;
 
 @ApplicationScoped
 public class I18n {
 
-    private ResourceBundle bundle;
+    private volatile ResourceBundle bundle;
 
     public I18n() {
         updateBundle();
@@ -17,7 +21,29 @@ public class I18n {
         this.bundle = ResourceBundle.getBundle("messages", Locale.getDefault());
     }
 
-    public String getMessage(String key) {
-        return bundle.getString(key);
+    public String getMessage(final String key) {
+        if (null == key) {
+            return "";
+        }
+
+        try {
+            return bundle.getString(key);
+        } catch (final MissingResourceException _) {
+            Log.warn("Missing resource key: " + key);
+            return "";
+        }
     }
+
+    public int getMnemonic(final String key) {
+        try {
+            return KeyEvent.getExtendedKeyCodeForChar(getMessage(key).charAt(0));
+        } catch (StringIndexOutOfBoundsException _) {
+            return KeyEvent.VK_UNDEFINED;
+        }
+    }
+
+    public KeyStroke getAccelerator(final String key) {
+        return KeyStroke.getKeyStroke(getMessage(key));
+    }
+
 }

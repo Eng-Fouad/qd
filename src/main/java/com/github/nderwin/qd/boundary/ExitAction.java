@@ -1,13 +1,13 @@
-package com.github.nderwin.qd.control;
+package com.github.nderwin.qd.boundary;
 
+import com.github.nderwin.qd.control.ApplicationExitEvent;
+import com.github.nderwin.qd.control.I18n;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.event.Event;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
-import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
-import java.awt.event.KeyEvent;
-import javax.swing.KeyStroke;
+import javax.swing.AbstractAction;
 
 @Singleton
 public class ExitAction extends AbstractAction {
@@ -21,8 +21,8 @@ public class ExitAction extends AbstractAction {
     @PostConstruct
     public void init() {
         putValue(NAME, i18n.getMessage("menuitem.exit"));
-        putValue(MNEMONIC_KEY, KeyEvent.getExtendedKeyCodeForChar(i18n.getMessage("menuitem.exit.mnemonic").charAt(0)));
-        putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(i18n.getMessage("menuitem.exit.accelerator")));
+        putValue(MNEMONIC_KEY, i18n.getMnemonic("menuitem.exit.mnemonic"));
+        putValue(ACCELERATOR_KEY, i18n.getAccelerator("menuitem.exit.accelerator"));
     }
 
     @Override
