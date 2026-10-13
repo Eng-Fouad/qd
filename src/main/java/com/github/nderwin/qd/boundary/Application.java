@@ -5,7 +5,6 @@ import io.quarkus.runtime.StartupEvent;
 import io.quarkus.runtime.annotations.RegisterResourceBundle;
 import jakarta.enterprise.event.Observes;
 
-//com.formdev.flatlaf.resources.Bundle
 @RegisterResourceBundle(bundleName = "messages")
 public class Application {
     

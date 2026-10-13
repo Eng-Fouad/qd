@@ -56,4 +56,3 @@ If you want to learn more about building native executables, please consult <htt
 ## Related Guides
 
 - Desktop Swing ([guide](https://docs.quarkiverse.io/quarkus-desktop/dev/index.html)): Build Swing desktop (GUI) applications: components and look and feels, in JVM mode and as native executables
-- JasperReports ([guide](https://docs.quarkiverse.io/quarkus-jasperreports/dev/index.html)): JasperReports is an open source reporting library that can be embedded into any Java application.
