@@ -1711,60 +1711,6 @@
       ]
     },
     {
-      "type": "sun.font.FontConfigManager$FcCompFont",
-      "jniAccessible": true,
-      "fields": [
-        {
-          "name": "allFonts"
-        },
-        {
-          "name": "fcName"
-        },
-        {
-          "name": "firstFont"
-        }
-      ]
-    },
-    {
-      "type": "sun.font.FontConfigManager$FontConfigFont",
-      "jniAccessible": true,
-      "fields": [
-        {
-          "name": "familyName"
-        },
-        {
-          "name": "fontFile"
-        },
-        {
-          "name": "fullName"
-        },
-        {
-          "name": "styleStr"
-        }
-      ],
-      "methods": [
-        {
-          "name": "<init>",
-          "parameterTypes": []
-        }
-      ]
-    },
-    {
-      "type": "sun.font.FontConfigManager$FontConfigFont[]"
-    },
-    {
-      "type": "sun.font.FontConfigManager$FontConfigInfo",
-      "jniAccessible": true,
-      "fields": [
-        {
-          "name": "cacheDirs"
-        },
-        {
-          "name": "fcVersion"
-        }
-      ]
-    },
-    {
       "type": "sun.font.FontStrike",
       "jniAccessible": true,
       "methods": [
@@ -2516,15 +2462,6 @@
           "parameterTypes": []
         }
       ]
-    },
-    {
-      "type": "sun.util.resources.cldr.TimeZoneNames"
-    },
-    {
-      "type": "sun.util.resources.cldr.TimeZoneNames_en"
-    },
-    {
-      "type": "sun.util.resources.cldr.TimeZoneNames_en_US"
     }
   ],
   "resources": [
